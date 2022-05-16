@@ -2,15 +2,19 @@
 
 # backup existing config files
 if [ -d ~/.config/nvim ]; then
-    mv ~/.config/nvim ~/.config/nvim_old
+    mv -f ~/.config/nvim ~/.config/nvim_old
 fi
 
 if [ -d ~/.config/coc ]; then
-    mv ~/.config/coc ~/.config/coc_old
+    mv -f ~/.config/coc ~/.config/coc_old
 fi
 
-if [ -f ~/.zshrc j]; then
-    mv ~/.zshrc ~/.zshrc_old
+if [ -f ~/.zshrc ]; then
+    mv -f ~/.zshrc ~/.zshrc_old
+fi
+
+if [ -d ~/.oh-my-zsh ]; then
+    mv -f ~/.oh-my-zsh ~/.ohmyzsh_old
 fi
 
 # install oh-my-zsh
