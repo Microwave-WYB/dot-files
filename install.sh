@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # backup existing config files
-if [ -d ~/.config/nvim ]:
+if [ -d ~/.config/nvim ]; then
     mv ~/.config/nvim ~/.config/nvim_old
 fi
 
-if [ -d ~/.config/coc ]:
+if [ -d ~/.config/coc ]; then
     mv ~/.config/coc ~/.config/coc_old
 fi
 
-if [ -f ~/.zshrc j]:
+if [ -f ~/.zshrc j]; then
     mv ~/.zshrc ~/.zshrc_old
 fi
 
