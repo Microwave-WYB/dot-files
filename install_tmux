@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ -r ~/.tmux ]; then
+		echo ~/.tmux exists! Aborting install. Manually remove ~/.tmux if you want to overwrite your existing configs.
+		exit 1
+fi
+
+if [ -r ~/.tmux.conf ]; then
+		echo ~/.tmux.conf exists! Aborting install. Manually remove ~/.tmux.conf if you want to overwrite your existing configs.
+		exit 1
+fi
+
+cp tmux/tmux.conf ~/.tmux.conf
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo Use <prefix>+I (Default is Ctrl+b, but I remapped to Alt+a) to install plugins.
+
