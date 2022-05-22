@@ -2,6 +2,7 @@ let mapleader="\<space>"				" map leader key to space
 nmap ; :
 vmap ; :
 
+
 " ---- cursor movements ----
 imap jk <esc>
 nmap <leader>J :join<cr>
@@ -9,13 +10,22 @@ nmap J 5<c-e>
 nmap K 5<c-y>
 map 0 ^
 map - $
+imap <c-l> <right>
+imap <c-h> <left>
+imap <c-j> <down>
+imap <c-k> <up>
+
+" ---- auto pairs ----
+imap {<enter> {<enter>}<esc>O
+imap [<enter> [<enter>]<esc>O
+imap (<enter> (<enter>)<esc>O
 
 function! GetHelpOnCwordInTab()
-    if &filetype == "vim"
-        execute 'tab help ' . expand("<cword>")
-    else
-        execute 'tabnew <bar> read ! ' . &keywordprg . expand("<cword>")
-    endif 
+	if &filetype == "vim"
+		execute 'tab help ' . expand("<cword>")
+	else
+		execute 'tabnew <bar> read ! ' . &keywordprg . expand("<cword>")
+	endif 
 endfunction
 "autocmd FileType * nnoremap <c-K> :call GetHelpOnCwordInTab()<CR>
 
@@ -57,9 +67,6 @@ vmap <leader>" <esc>`>a"<esc>`<i"<esc>
 vmap <leader>' <esc>`>a'<esc>`<i'<esc>
 vmap <leader>` <esc>`>a`<esc>`<i`<esc>
 
-" Go out of bracket
-inoremap <expr> JK search('\%#[]>)}''"`]', 'n') ? '<Right>' : '<Tab>'
-
 " ---- UI settings ----
 " UI components toggle
 nmap <leader>ve :CocCommand explorer --width 28 <cr>
@@ -72,6 +79,15 @@ nmap th <C-w>v<C-w><Left>:term<cr>:vertical resize -20<cr>i
 nmap tl <C-w>v<C-w><Right>:term<cr>:vertical resize -20<cr>i
 nmap tj <C-w>s<C-w><Down>:term<cr>:resize -10<cr>i
 nmap tk <C-w>s<C-w><Up>:term<cr>:resize -10<cr>i
+tmap <Esc> <C-\><C-n>
+tmap <C-h> <Esc><C-w><Left>
+tmap <C-l> <Esc><C-w><Right>
+tmap <C-k> <Esc><C-w><Up>
+tmap <C-j> <Esc><C-w><Down>
+tmap <M-l> <Esc>gt
+tmap <M-h> <Esc>gT
+
+" Tabs and windows
 nmap <leader>t :tabnew<cr>
 nmap <M-l> gt
 nmap <M-h> gT
@@ -98,10 +114,3 @@ nmap <leader>8 8gt<cr>
 nmap <leader>9 9gt<cr>
 nmap <leader>0 10gt<cr>
 
-tmap <Esc> <C-\><C-n>
-tmap <C-h> <Esc><C-w><Left>
-tmap <C-l> <Esc><C-w><Right>
-tmap <C-k> <Esc><C-w><Up>
-tmap <C-j> <Esc><C-w><Down>
-tmap <M-l> <Esc>gt
-tmap <M-h> <Esc>gT
