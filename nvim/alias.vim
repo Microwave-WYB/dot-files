@@ -6,3 +6,4 @@ cabbrev noexpand set noexpandtab
 cabbrev expand set expandtab
 cabbrev rt retab!
 cabbrev gd DiffviewOpen main HEAD
+cabbrev qf copen
