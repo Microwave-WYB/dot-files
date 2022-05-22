@@ -10,7 +10,6 @@ alias temp="gsettings set org.gnome.settings-daemon.plugins.color night-light-te
 alias py="python"
 alias p="builtin r"
 alias mutter-settings="gjs $HOME/Documents/repos/mutter-rounded-setting/dist/mutter_settings.js"
-alias rm=trash
 
 # Git
 alias g="git"
