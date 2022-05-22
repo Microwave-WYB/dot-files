@@ -27,5 +27,7 @@ call plug#begin()
 	Plug 'tpope/vim-commentary'
 	Plug 'christoomey/vim-tmux-navigator'
 	Plug 'arrufat/vala.vim'
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'sindrets/diffview.nvim'
 	Plug 'frazrepo/vim-rainbow'
 call plug#end()
