@@ -12,6 +12,7 @@ source ~/.config/nvim/tagbar.vim
 source ~/.config/nvim/ranger.vim
 source ~/.config/nvim/easymotion.vim
 source ~/.config/nvim/copilot.vim
+source ~/.config/nvim/rainbow.vim
 
 " ---- customize ----
 source ~/.config/nvim/themes.vim
