@@ -30,4 +30,6 @@ call plug#begin()
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'sindrets/diffview.nvim'
 	Plug 'frazrepo/vim-rainbow'
+	Plug 'LucHermitte/lh-vim-lib'
+	Plug 'rafaqz/ranger.vim'
 call plug#end()
