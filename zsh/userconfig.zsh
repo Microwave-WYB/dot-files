@@ -9,7 +9,6 @@ alias nvimc="nvim $HOME/.config/nvim/init.vim"
 alias temp="gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature"
 alias py="python"
 alias p="builtin r"
-alias arch="podman exec -it arch"
 alias mutter-settings="gjs $HOME/Documents/repos/mutter-rounded-setting/dist/mutter_settings.js"
 alias rm=trash
 
