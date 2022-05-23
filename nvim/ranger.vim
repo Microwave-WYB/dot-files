@@ -1,2 +1,2 @@
-map <leader>r :Ranger<CR>
-let g:ranger_map_keys = 0
+map <leader>r :RangerEdit<CR>
+"let g:ranger_map_keys = I
