@@ -1,5 +1,12 @@
 {
-    "explorer.icon.enableNerdfont": true,
-    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/14.0.3/clangd_14.0.3/bin/clangd",
-    "clangd.inlayHints.enable": false
+	"explorer.icon.enableNerdfont": true,
+	"clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/14.0.3/clangd_14.0.3/bin/clangd",
+	"clangd.inlayHints.enable": false,
+	"rust-client.rustupPath": "/home/wyb/.cargo/bin/rustup",
+	"languageserver": {
+		"vala": {
+			"command": "vala-language-server",
+			"filetypes": ["vala"]
+		}
+	}
 }
