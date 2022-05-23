@@ -32,4 +32,5 @@ call plug#begin()
 	Plug 'frazrepo/vim-rainbow'
 	Plug 'LucHermitte/lh-vim-lib'
 	Plug 'rafaqz/ranger.vim'
+        Plug 'editorconfig/editorconfig-vim'
 call plug#end()
