@@ -20,21 +20,13 @@ imap {<enter> {<enter>}<esc>O
 imap [<enter> [<enter>]<esc>O
 imap (<enter> (<enter>)<esc>O
 
-function! GetHelpOnCwordInTab()
-	if &filetype == "vim"
-		execute 'tab help ' . expand("<cword>")
-	else
-		execute 'tabnew <bar> read ! ' . &keywordprg . expand("<cword>")
-	endif 
-endfunction
-"autocmd FileType * nnoremap <c-K> :call GetHelpOnCwordInTab()<CR>
-
 " ---- File/buffer operations ----
 nmap <leader>w :w!<cr>
 nmap <leader>wq :wq<cr>
 nmap <leader><cr> :noh<cr>
 map q <c-w>q<cr>
 map <leader>q :q!<cr>
+map <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " ---- Code formatting ----
 " Alt key to move lines around
@@ -44,13 +36,7 @@ vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 " Delete trailing white space on save
-fun! CleanExtraSpaces()
-	let save_cursor = getpos(".")
-	let old_query = getreg('/')
-	silent! %s/\s\+$//e
-	call setpos('.', save_cursor)
-	call setreg('/', old_query)
-endfun
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Tab indent
 nnoremap <tab> >>_
@@ -75,10 +61,7 @@ nmap <leader>vt :TagbarToggle<cr>
 
 " Terminal
 nmap tt :tabnew<cr>:term<cr>i
-nmap th <C-w>v<C-w><Left>:term<cr>:vertical resize -20<cr>i
-nmap tl <C-w>v<C-w><Right>:term<cr>:vertical resize -20<cr>i
-nmap tj <C-w>s<C-w><Down>:term<cr>:resize -10<cr>i
-nmap tk <C-w>s<C-w><Up>:term<cr>:resize -10<cr>i
+nmap tj <C-w>s<C-w><Down>:term<cr><c-w>J:resize -12<cr>i
 tmap <Esc> <C-\><C-n>
 tmap <C-h> <Esc><C-w><Left>
 tmap <C-l> <Esc><C-w><Right>
@@ -99,10 +82,10 @@ nmap <C-down> <C-w>+
 nmap <C-up> <C-w>-
 nmap <C-left> <C-w><
 nmap <C-right> <C-w>>
-nmap <leader>h <C-w>v<C-w><Left><Esc>:Ranger<cr>
-nmap <leader>l <C-w>v<C-w><Right><Esc>:Ranger<cr>
-nmap <leader>k <C-w>s<C-w><Up><Esc>:Ranger<cr>
-nmap <leader>j <C-w>s<C-w><Down><Esc>:Ranger<cr>
+nmap <leader>h <C-w>v<C-w><Left><Esc>:RangerEdit<cr>
+nmap <leader>l <C-w>v<C-w><Right><Esc>:RangerEdit<cr>
+nmap <leader>k <C-w>s<C-w><Up><Esc>:RangerEdit<cr>
+nmap <leader>j <C-w>s<C-w><Down><Esc>:RangerEdit<cr>
 nmap <leader>1 1gt<cr>
 nmap <leader>2 2gt<cr>
 nmap <leader>3 3gt<cr>
