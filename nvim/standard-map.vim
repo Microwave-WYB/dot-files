@@ -36,7 +36,7 @@ vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 " Delete trailing white space on save
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e
 
 " Tab indent
 nnoremap <tab> >>_
@@ -57,7 +57,6 @@ vmap <leader>` <esc>`>a`<esc>`<i`<esc>
 " UI components toggle
 nmap <leader>ve :CocCommand explorer --width 28 <cr>
 nmap <leader>vt :TagbarToggle<cr>
-
 
 " Terminal
 nmap tt :tabnew<cr>:term<cr>i
@@ -97,3 +96,7 @@ nmap <leader>8 8gt<cr>
 nmap <leader>9 9gt<cr>
 nmap <leader>0 10gt<cr>
 
+" Folding
+nmap \ zA
+nmap <leader>- zM
+nmap <leader>= zR
