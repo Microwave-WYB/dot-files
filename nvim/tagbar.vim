@@ -1,2 +1,2 @@
-map <f3> :TagbarToggle<CR>
+map <c-]> :TagbarToggle<CR>
 let g:tagbar_width=28
