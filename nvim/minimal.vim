@@ -39,15 +39,6 @@ map 0 ^
 " Remap - to last character
 map - $
 
-" Delete trailing white space on save
-fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-    endfun
-
 " Move lines with Alt+j/k
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
