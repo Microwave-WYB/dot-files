@@ -18,9 +18,9 @@ let g:gruvbox_transparent_bg=1
 set t_Co=256
 let g:gruvbox_termcolors=256
 colorscheme gruvbox-material
-hi Normal guibg=NONE ctermbg=NONE
+"hi Normal guibg=NONE ctermbg=NONE
 " Theme change
-let hr = (strftime('%H'))
+"let hr = (strftime('%H'))
 
 " if hr >= 20
 " 		 set background=dark
@@ -30,15 +30,8 @@ let hr = (strftime('%H'))
 " 		 set background=dark
 " endif
 
-let g:lightline = {
-			\ 'colorscheme': 'powerline',
-			\ 'enable': {
-				\		'tabline' :0
-				\ }
-				\ }
-
-" Remove ~
-set fillchars=eob:\ 
+" Remove ~ in the end of buffer
+hi! EndOfBuffer guifg=bg
 
 let g:airline_powerline_fonts = 1
 
