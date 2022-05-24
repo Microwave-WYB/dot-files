@@ -23,6 +23,3 @@ function! EasyMotionCoc() abort
 endfunction
 autocmd TextChanged,CursorMoved * call EasyMotionCoc()
 
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-
