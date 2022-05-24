@@ -13,8 +13,13 @@ if !exists('g:vscode')
 	source ~/.config/nvim/ranger.vim
 	source ~/.config/nvim/easymotion.vim
 	source ~/.config/nvim/rainbow.vim
-        source ~/.config/nvim/editorconfig.vim
+	source ~/.config/nvim/editorconfig.vim
+	source ~/.config/nvim/spector.vim
+	source ~/.config/nvim/diffview.vim
+	source ~/.config/nvim/git.vim
+	source ~/.config/nvim/whichkey.vim
 
 	" ---- customize ----
 	source ~/.config/nvim/themes.vim
 endif
+
