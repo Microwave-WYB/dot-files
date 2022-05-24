@@ -1,14 +1,11 @@
 call plug#begin()
 	Plug 'francoiscabrol/ranger.vim'
-	Plug 'rbgrouleff/bclose.vim'
 	Plug 'NLKNguyen/papercolor-theme'
 	Plug 'github/copilot.vim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'junegunn/fzf.vim'
 	Plug 'francoiscabrol/ranger.vim'
 	Plug 'easymotion/vim-easymotion'
-	Plug 'haya14busa/incsearch.vim'
-	Plug 'haya14busa/incsearch-easymotion.vim'
 	Plug 'autozimu/LanguageClient-neovim', {
 				\ 'branch': 'next',
 				\ 'do': 'bash install.sh'
@@ -32,5 +29,8 @@ call plug#begin()
 	Plug 'frazrepo/vim-rainbow'
 	Plug 'LucHermitte/lh-vim-lib'
 	Plug 'rafaqz/ranger.vim'
-        Plug 'editorconfig/editorconfig-vim'
+	Plug 'editorconfig/editorconfig-vim'
+	Plug 'puremourning/vimspector'
+	Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+	Plug 'tpope/vim-fugitive'
 call plug#end()
