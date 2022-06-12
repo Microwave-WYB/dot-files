@@ -18,6 +18,9 @@ if !exists('g:vscode')
 	source ~/.config/nvim/diffview.vim
 	source ~/.config/nvim/git.vim
 	source ~/.config/nvim/whichkey.vim
+	source ~/.config/nvim/docgen.vim 
+	source ~/.config/nvim/clang-format.vim
+	source ~/.config/nvim/screenshot.vim
 
 	" ---- customize ----
 	source ~/.config/nvim/themes.vim

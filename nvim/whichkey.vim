@@ -1,3 +1,9 @@
+autocmd! User vim-which-key call which_key#register('<Space>', 'g:which_key_map_space')
+autocmd! User vim-which-key call which_key#register(',', 'g:which_key_map_comma')
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> f :WhichKey 'f'<cr>
+nnoremap <silent> , :WhichKey ','<cr>
+
 let g:which_key_map_space =  {
 			\ '<F5>' : 'Launch Debugger',
 			\ '<F8>' : 'Run To Cursor',
@@ -8,16 +14,13 @@ let g:which_key_map_space =  {
 			\ 'e' : "Explorer",
 			\ }
 
-autocmd! User vim-which-key call which_key#register('<Space>', 'g:which_key_map_space')
-nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
-nnoremap <silent> f :WhichKey 'f'<cr>
-
 set timeoutlen=500
 
-let g:which_key_map_space.d = {
+let g:which_key_map_comma = {
 			\ 'name' : '+Debugger',
+			\ 'B' : 'Break Points',
+			\ 'b' : 'Toggle Breakpoint',
 			\ 'r' : 'Reset',
-			\ 'b' : 'Break Points',
 			\ 's' : 'Step Into',
 			\ 'c' : 'Continue',
 			\ 'n' : 'Next Line',

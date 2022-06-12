@@ -16,8 +16,12 @@ syntax on
 set guicursor+=a:blinkwait100-blinkon700-blinkoff700
 set noshowmode
 set cmdheight=1
-set foldmethod=syntax
+set foldmethod=indent
 set nofoldenable
-set foldlevel=99
+"set foldlevel=99
 
-au BufReadPost * if line("'\'") > 1 && line("'\'") <= line("$") | exe "normal! g'\"" | endif
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif

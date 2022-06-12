@@ -33,4 +33,13 @@ call plug#begin()
 	Plug 'puremourning/vimspector'
 	Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 	Plug 'tpope/vim-fugitive'
+	Plug 'gosukiwi/vim-smartpairs'
+	Plug 'voldikss/vim-floaterm'
+	Plug 'honza/vim-snippets'
+	Plug 'SirVer/ultisnips'
+	Plug 'mg979/docgen.vim'
+	Plug 'ap/vim-css-color'
+	Plug 'rhysd/vim-clang-format'
+	Plug 'SergioRibera/vim-screenshot', { 'do': 'npm install --prefix Renderizer' }
+	Plug 'ayu-theme/ayu-vim'
 call plug#end()

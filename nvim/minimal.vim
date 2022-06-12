@@ -62,7 +62,7 @@ nmap th <C-w>v<C-w><Left>:term<cr>:vertical resize -20<cr>i
 nmap tl <C-w>v<C-w><Right>:term<cr>:vertical resize -20<cr>i
 nmap tj <C-w>s<C-w><Down>:term<cr>:resize -10<cr>i
 nmap tk <C-w>s<C-w><Up>:term<cr>:resize -10<cr>i
-nmap <leader>t :tabnew<cr>
+nmap <leader>t :enew<cr>
 nmap <M-l> gt
 nmap <M-h> gT
 nmap <C-h> <C-w><Left>

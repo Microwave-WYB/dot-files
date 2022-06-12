@@ -13,12 +13,12 @@ let g:gruvbox_material_enable_bold=1
 let g:gruvbox_inverse=1
 let g:gruvbox_underline=1
 let g:gruvbox_undercurl=1
-let g:gruvbox_transparent_bg=1
+let g:gruvbox_transparent_bg=0
 
 set t_Co=256
 let g:gruvbox_termcolors=256
-colorscheme gruvbox-material
-"hi Normal guibg=NONE ctermbg=NONE
+" colorscheme gruvbox-material
+" hi Normal guibg=NONE ctermbg=NONE
 " Theme change
 "let hr = (strftime('%H'))
 
@@ -31,8 +31,20 @@ colorscheme gruvbox-material
 " endif
 
 " Remove ~ in the end of buffer
-hi! EndOfBuffer guifg=bg
 
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 set cursorline
+
+
+set termguicolors     " enable true colors support
+" let ayucolor="light"  " for light version of theme
+" let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+"
+colorscheme ayu
+hi! EndOfBuffer guifg=bg
+" Indent guide
+set listchars=tab:\|\ 
+set nolist

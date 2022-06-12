@@ -5,20 +5,17 @@ vmap ; :
 
 " ---- cursor movements ----
 imap jk <esc>
-nmap <leader>J :join<cr>
-nmap J 5<c-e>
-nmap K 5<c-y>
 map 0 ^
-map - $
+map - g_
 imap <c-l> <right>
 imap <c-h> <left>
 imap <c-j> <down>
 imap <c-k> <up>
 
 " ---- auto pairs ----
-imap {<enter> {<enter>}<esc>O
-imap [<enter> [<enter>]<esc>O
-imap (<enter> (<enter>)<esc>O
+" imap {<enter> {<enter>}<esc>O
+" imap [<enter> [<enter>]<esc>O
+" imap (<enter> (<enter>)<esc>O
 
 " ---- File/buffer operations ----
 nmap <leader>w :w!<cr>
@@ -59,7 +56,7 @@ nmap <leader>ve :CocCommand explorer --width 28 <cr>
 nmap <leader>vt :TagbarToggle<cr>
 
 " Terminal
-nmap tt :tabnew<cr>:term<cr>i
+nmap tt :FloatermToggle<cr>
 nmap tj <C-w>s<C-w><Down>:term<cr><c-w>J:resize -12<cr>i
 tmap <Esc> <C-\><C-n>
 tmap <C-h> <Esc><C-w><Left>
