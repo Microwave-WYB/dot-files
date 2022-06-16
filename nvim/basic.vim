@@ -5,7 +5,8 @@ set wrap
 set noexpandtab
 set smarttab
 set noswapfile
-set number
+" set number
+set rnu
 set mouse=a
 set showmatch
 set clipboard=unnamedplus

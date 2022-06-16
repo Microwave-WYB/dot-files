@@ -8,5 +8,6 @@
 			"filetypes": ["vala"]
 		}
 	},
-	"rust-analyzer.inlayHints.enable": false
+  "rust-analyzer.inlayHints.enable": false,
+  "markdown-preview-enhanced.previewTheme": "atom-dark.css"
 }

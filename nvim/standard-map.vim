@@ -2,20 +2,14 @@ let mapleader="\<space>"				" map leader key to space
 nmap ; :
 vmap ; :
 
-
 " ---- cursor movements ----
 imap jk <esc>
 map 0 ^
 map - g_
 imap <c-l> <right>
-imap <c-h> <left>
+map <c-h> <left>
 imap <c-j> <down>
 imap <c-k> <up>
-
-" ---- auto pairs ----
-" imap {<enter> {<enter>}<esc>O
-" imap [<enter> [<enter>]<esc>O
-" imap (<enter> (<enter>)<esc>O
 
 " ---- File/buffer operations ----
 nmap <leader>w :w!<cr>

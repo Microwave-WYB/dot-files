@@ -68,4 +68,3 @@ fi
 
 # kitty ssh
 [[ "$TERM" == "xterm-kitty" ]] && alias ssh="kitty +kitten ssh"
-clear
