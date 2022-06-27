@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if [ -z `which trash` ]; then
+	echo "Command 'trash' not found! Install trash-cli first."
+	exit 1
+fi
+
+cmd="/usr/bin/trash"
+
+while true; do
+	echo -n "Move to trash? [Y/n]: "
+	read option
+	case $option in
+		Y|y|"")
+			break
+			;;
+		N|n)
+			cmd="/usr/bin/rm"
+			break
+			;;
+		*)
+			continue;;
+	esac
+done
+
+echo -e "Executing command: \e[34m\e[3m\e[1m$cmd $@\e[0m"
+unset $@[0]
+$cmd $@

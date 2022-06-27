@@ -1,0 +1,12 @@
+#!/bin/bash
+
+filename=$(date "+%Y.%m.%d-%H.%M.%S.png")
+if wl-paste -t image/png > "/tmp/$filename"; then
+    pinta "/tmp/$filename"
+    sleep 1
+    wl-copy < "/tmp/$filename"
+    echo Image copied
+else
+    echo Error: invalid image file
+fi
+

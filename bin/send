@@ -1,0 +1,77 @@
+#!/bin/bash
+
+print_usage() {
+    echo "Usage: send [-q] [-f <filename>]"
+    echo "    -q: Use qrcp instead of kdeconnect-handler"
+    echo "    -f: Use the given filename instead of a temporary one"
+    echo "    -h: Print this help message"
+    echo "Note: This script requires an image in your clipboard. "
+    echo "      You can use any screenshot application or copy an image from web browsers."
+}
+
+filename=/tmp/$(date "+%Y.%m.%d-%H.%M.%S.png")
+cb_cmd="xclip -selection clipboard -t image/png -o"
+handler="kdeconnect-handler"
+existing_file=false
+
+# Command for Wayland
+if [[ $XDG_SESSION_TYPE == "wayland" ]]; then
+    cb_cmd="wl-paste -t image/png"
+    if [ -z "$(which wl-paste)" ] ; then
+        echo "wl-clipboard is not installed. Please install wl-clipboard with your package manager."
+        exit 1
+    fi
+else 
+    if [ -z "$(which xclip)" ] ; then
+        echo "xclip is not installed. Please install xclip with your package manager."
+        exit 1
+    fi
+fi
+
+# Check for essential dependencies
+if [ -z "$(which qrcp)" ]; then
+    echo "qrcp is not installed. Please visit https://github.com/claudiodangelis/qrcp"
+    exit 1
+fi
+
+if [ -z "$(which kdeconnect-handler)" ]; then
+    echo "kdeconnect-handler is not installed. Please install kdeconnect with your package manager."
+    exit 1
+fi
+
+# Parse arguments
+while getopts "qhf:" flag
+do
+    case "${flag}" in
+        q) 
+            handler="qrcp"
+            ;;
+        f) 
+            filename=${OPTARG}
+            existing_file=true
+            ;;
+        h) 
+            print_usage
+            exit 0
+            ;;
+        *)
+            print_usage
+            exit 1
+            ;;
+    esac
+done
+
+# Send existing file
+if [ $existing_file ] && [ -f $filename ]; then
+    echo "$handler $filename"
+    $handler $filename
+    exit 0
+fi
+
+# Run command
+if $cb_cmd > "$filename"; then
+    echo "$handler $filename"
+    $handler "$filename"
+else
+    echo "Failed to save screenshot. Please make sure you have an image in your clipboard."
+fi
